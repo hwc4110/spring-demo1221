@@ -40,7 +40,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             }
             System.out.println(SignUtils.getTimestamp());
             //判断是否重复访问，存在重放攻击的时间窗口期
-            if (SignUtils.getTimestamp() - Long.valueOf(ts) > 600){
+            if (SignUtils.getTimestamp() - Long.valueOf(ts) > 60){
                 jsonObject.put("success",false);
                 jsonObject.put("message","Overtime to connect to server");
                 jsonObject.put("code","1002");
